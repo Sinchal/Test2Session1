@@ -1,1 +1,7 @@
-
+gcc -g p1original.c -lm
+./a.out
+Input x1: 9
+Input y1: 4
+Input x2: 3
+Input y2: 8
+the distance between 9.0 4.0 and 3.0 8.0 is 22.0

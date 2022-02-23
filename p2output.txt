@@ -1,1 +1,9 @@
-
+gcc -g p2original.c
+./a.out
+Input x1: 9
+Input y1: 5
+Input x2: 3
+Input y2: 8
+Input x3: 2
+Input y3: 8
+yes

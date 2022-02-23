@@ -1,1 +1,13 @@
-
+gcc -g p3original.c
+./a.out
+enter the number
+2
+2 is a prime number.
+./a.out
+enter the number
+7
+7 is a prime number.
+./a.out
+enter the number
+34
+34 is not a prime number.
