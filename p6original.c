@@ -1,27 +1,42 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int string_length(char *s)
+void input_string(char* a, char* b)
 {
-  int i;
-  for(i=0;s[i]!='\0';i++);
-  return i;
+    printf("Enter the string:\n");
+    scanf("%s", a);
+    printf("Enter the substring:\n");
+    scanf("%s", b);
 }
 
-int string_ncmp(char *s1,char *s2)
+int sub_str_posn(char *string, char *substring)
 {
-  for(int i=0; i<n && s1[i]==s2[i] && s1[i] != '\0';i++);
-  return s1[i] - s2[i];
-}
-
-
-int string_index(char *s, char *subs)
-{
-  int l1=string_lenght(s);
-  int l2=string_lenght(subs);
-  if l1 < l2
-      return -1;
-  for(int i=0;i<l1-l2;i++)
-    if (string_nscmp(s,subs))
-      return i;
+  int i, j = 0;
+  for (i = 0; string[i] != 0 && substring[j] != 0; i++)
+    {
+      if (string[i] == substring[j])
+        j++;
+      else if (j != 0)
+        j = 0;
+    }
+  if (j != 0)
+    return i - j;
   return -1;
+}
+
+void output(char* string, char* substring, int index)
+{
+  if (index >= 0)
+    printf("The index of %s in %s is %d\n", substring, string, index);
+  else
+   printf("%s is not found in %s\n", substring, string);
+}
+
+int main()
+{
+    char str[100];
+    char substr[100];
+    input_string(str, substr);
+    int index = sub_str_posn(str, substr);
+    output(str, substr, index);
+    return 0;
 }

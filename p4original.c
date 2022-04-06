@@ -2,40 +2,33 @@
 
 int input()
 {
-  int n;
-  printf("enter nth value:");
-  scanf("%d",&n);
-  return n;
+    int num;
+    printf("Enter n: ");
+    scanf("%d", &num);
+    return num;
 }
 
 int find_fibo(int n)
 {
-  int a=0,b=1,i,c;
-  for(i=2;i<n;i++)
-  {
-    c=a+b;
-    a=b;
-    b=c;
-  }
-  return c;
+    int num1 = 0,num2 = 1,temp;
+    for (int i = 2; i <= n; i++)
+    {
+        temp = num1+num2;
+        num1 = num2;
+        num2 = temp;
+    }
+    return num2;
 }
 
-void output(int n, int c)
+void output(int n, int fibo)
 {
-  int a=0,b=1;
-    if(n==1)
-    printf("the %d element in fibonacci series is %d",n,a);
-  else if(n==2)
-    printf("the %d element in fibonacci series is %d",n,b);
-  else
-  printf("the %d element in fibonacci series is %d",n,c);
+    printf("Fibo(%d) is %d\n", n, fibo);
 }
 
 int main()
 {
-  int n,c;
-  n=input();
-  c=find_fibo(n);
-  output(n,c);
-  return 0;
+    int num = input();
+    int res = find_fibo(num);
+    output(num, res);
+    return 0;
 }
